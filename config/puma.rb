@@ -55,5 +55,7 @@ environment ENV.fetch("RAILS_ENV") { "development" }
 # Allow puma to be restarted by `rails restart` command.
 plugin :tmp_restart
 
-require "dotenv"
-Dotenv.load("/.env")
+if ENV['RAILS_ENV'] != 'production'
+    require "dotenv"
+    Dotenv.load("/.env")
+end
