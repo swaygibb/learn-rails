@@ -8,7 +8,6 @@ end
 
 
 gem 'rails', '~> 5.1.0'
-gem 'sqlite3'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -38,5 +37,9 @@ gem 'jquery-rails'
 group :development do
   gem 'better_errors'
   gem 'rails_layout'
+  gem 'sqlite3'
 end
 gem 'dotenv-rails', groups: [:development, :test]
+group :production do
+  gem 'pg'
+end
